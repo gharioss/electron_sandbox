@@ -1,7 +1,3 @@
-// import Chart from 'chart.js';
-
-// WEATHER
-
 const lat = "43.296482";
 const lon = "5.36978";
 const apikey = "ce594e43db947220ca66ff854126f346";
@@ -25,10 +21,6 @@ async function getWeather() {
   return dateTemp;
 }
 const data = await getWeather();
-
-
-
-// CHART
 
 const temperatureData = data.map((data) => data[1]); // Exemple de données de température
 const labels = data.map((data) => data[0]); // Exemple d'étiquettes pour l'axe des X
@@ -64,18 +56,3 @@ const labels = data.map((data) => data[0]); // Exemple d'étiquettes pour l'axe 
 
   // Créez le graphique en utilisant la configuration
   const myChart = new Chart(ctx, config);
-
-
-
-  // PC INFO
-
-// var os = require('os-utils');
-
-
-// os.cpuUsage(function(v){
-// 	console.log( 'CPU Usage (%): ' + v );
-// });
-
-// os.cpuFree(function(v){
-// 	console.log( 'CPU Free:' + v );
-// });
