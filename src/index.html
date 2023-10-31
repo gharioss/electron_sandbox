@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="index.css" />
+    <title>Géolocalisation</title>
+  </head>
+  <body>
+    <button onclick="shareData()">DATA</button>
+    <h1 id="city-name"></h1>
+    <canvas id="temperature-chart" width="400" height="200"></canvas>
+    <div id="weather-cards"></div>
+    
+    <script>
+      const { ipcRenderer } = require('electron');
+       function shareData() {
+        ipcRenderer.send('msg', 'test message');
+        };
+    </script>
+    <script type="module" src="./service.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>
